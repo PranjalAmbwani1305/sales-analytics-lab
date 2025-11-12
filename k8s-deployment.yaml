@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sales-analytics-deployment
+  labels:
+    app: sales-analytics
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sales-analytics
+  template:
+    metadata:
+      labels:
+        app: sales-analytics
+    spec:
+      containers:
+      - name: streamlit-app
+        image: your-dockerhub-username/sales-analytics-app:latest
+        ports:
+        - containerPort: 8501
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sales-analytics-service
+spec:
+  selector:
+    app: sales-analytics
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8501
