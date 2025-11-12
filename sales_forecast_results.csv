@@ -1,0 +1,9 @@
+Model,Actual,Predicted,Error
+LinearRegression,15,17.09164143371369,-2.09164143371369
+LinearRegression,11,22.746026468694577,-11.746026468694577
+LinearRegression,35,23.821973218248242,11.178026781751758
+LinearRegression,20,20.010384380274992,-0.010384380274992111
+DecisionTree,15,13.0,2.0
+DecisionTree,11,12.0,-1.0
+DecisionTree,35,40.0,-5.0
+DecisionTree,20,21.0,-1.0
